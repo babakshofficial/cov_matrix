@@ -20,6 +20,7 @@ sdata2 = np.random.multivariate_normal(mean, cov2, N)
 
 z2 = []
 zzz = []
+
 first_column2 = []
 second_column2 = []
 for i in range(N):
