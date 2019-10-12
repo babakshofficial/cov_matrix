@@ -85,8 +85,8 @@ print ("5. non-numpy[last][first] = " + str(non_numpy2[-1][0]))
 print (non_numpy2 == result2)
 
 # comparison Covariance Matrices by rounding
-# around floating point peak=10 of each value
-peak = 14
+# around floating point peak = 10 of each value
+peak = 11
 com_result = COM.comparison(non_numpy,result,peak)
 print
 if com_result == 1:
