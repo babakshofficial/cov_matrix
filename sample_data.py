@@ -42,11 +42,11 @@ for i in range(N):
 # draw two scatter plots in a single figure
 plot.figure('Scatter Plots')
 plot.subplot(121)
-plot.scatter(first_column, second_column)
+plot.scatter(first_column, second_column, c = 'orange')
 plot.subplot(122)
 plot.scatter(first_column2, second_column2)
 
-#plot.show()
+plot.show()
 
 # comparison between numpy result and our simple way result
 half = int(N/2)
@@ -86,6 +86,13 @@ print (non_numpy2 == result2)
 
 # comparison Covariance Matrices by rounding
 # around floating point peak=10 of each value
-print (COM.comparison(non_numpy,result,10))
+peak = 14
+com_result = COM.comparison(non_numpy,result,peak)
+print
+if com_result == 1:
+    print ("The Matrices are","Identical")
+else:
+    print ("The Matrices are","Not Identical with Peak = " + str(peak))
+
 
 
