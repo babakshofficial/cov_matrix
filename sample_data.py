@@ -8,7 +8,7 @@ import comparison as COM
 N = 1000
 mean = [0, 0]
 
-#FIRST MATRIX
+# FIRST MATRIX
 cov = [[1, 0], [0, 1]]
 
 # multivariate_normal implementation includes cov
