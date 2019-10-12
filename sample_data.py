@@ -4,7 +4,7 @@ import calculate_cov as COV
 import comparison as COM
 
 #initialization
-N = 21
+N = 1000
 mean = [0, 0]
 
 #FIRST MATRIX
@@ -83,6 +83,7 @@ print ("4. non-numpy[first][last] = " + str(non_numpy2[0][-1]))
 print ("5. non-numpy[last][first] = " + str(non_numpy2[-1][0]))
 print (non_numpy2 == result2)
 
-print (COM.comparison(non_numpy,result,14))
+#comparison Covariance Matrices by peak=10 of each value
+print (COM.comparison(non_numpy,result,10))
 
 
