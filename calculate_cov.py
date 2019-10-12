@@ -5,8 +5,7 @@ def mean(x):
 def cov(x, y):
     x_mean = mean(x)
     y_mean = mean(y)
-    data = [(x[i] - x_mean) * (y[i] - y_mean)
-            for i in range(len(x))]
+    data = [(x[i] - x_mean) * (y[i] - y_mean) for i in range(len(x))]
     return sum(data) / (len(data) - 1)
 
 def make_cov_matrix(sdata):
