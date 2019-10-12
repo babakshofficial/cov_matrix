@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plot
 import calculate_cov as COV
+import comparison as COM
 
 #initialization
-N = 1000
+N = 21
 mean = [0, 0]
 
 #FIRST MATRIX
@@ -63,6 +64,7 @@ print ("2. non-numpy[N/2][N/2] = " + str(non_numpy[half][half]))
 print ("3. non-numpy[10][20] = " + str(non_numpy[10][20]))
 print ("4. non-numpy[first][last] = " + str(non_numpy[0][-1]))
 print ("5. non-numpy[last][first] = " + str(non_numpy[-1][0]))
+print (non_numpy == result)
 print("\n**************************************************************************")
 print ("\nThe numpy Generated Values for: " + str(cov2) + "\n")
 result2 = np.cov(sdata2)
@@ -79,5 +81,8 @@ print ("2. non-numpy[N/2][N/2] = " + str(non_numpy2[half][half]))
 print ("3. non-numpy[10][20] = " + str(non_numpy2[10][20]))
 print ("4. non-numpy[first][last] = " + str(non_numpy2[0][-1]))
 print ("5. non-numpy[last][first] = " + str(non_numpy2[-1][0]))
+print (non_numpy2 == result2)
+
+print (COM.comparison(non_numpy,result,14))
 
 
