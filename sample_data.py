@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plot
+import calculate_cov as COV
 
 N = 1000
 mean = [0, 0]
@@ -26,7 +27,7 @@ for i in range(N):
     second_column2.append(sdata2[:][i][1])
 #plot.scatter(first_column2, second_column2)
 
-plot.figure('hello')
+plot.figure('Scatter Plots')
 plot.subplot(121)
 plot.scatter(first_column, second_column)
 plot.subplot(122)
@@ -34,5 +35,12 @@ plot.scatter(first_column2, second_column2)
 
 plot.show()
 
-result = np.cov(sdata, sdata2)
-print(result)
+print ("The numpy Generated Covariance Matrix \n")
+result = np.cov(sdata2)
+#print(result)
+print ("\nOur non-numpy Generated Covariance Matrix \n")
+non_numpy = COV.make_cov_matrix(sdata2)
+#for i in range(len(non_numpy)):
+#    print(non_numpy[i])
+#print
+
