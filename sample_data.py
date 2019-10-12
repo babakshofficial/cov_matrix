@@ -3,20 +3,21 @@ import matplotlib.pyplot as plot
 import calculate_cov as COV
 import comparison as COM
 
-#initialization
+# created by: Babak Shahriari
+# initialization
 N = 1000
 mean = [0, 0]
 
 #FIRST MATRIX
 cov = [[1, 0], [0, 1]]
 
-#multivariate_normal implementation includes cov
-#normal Implementation includes standard Deviation
-#produce N sample data based on multivariate normal (Gausian) distribution
+# multivariate_normal implementation includes cov
+# normal Implementation includes standard Deviation
+# produce N sample data based on multivariate normal (Gausian) distribution
 sdata = np.random.multivariate_normal(mean, cov, N)
 
-#converting class array type to simple list
-#and disjoint columns
+# converting class array type to simple list
+# and disjoint columns
 first_column = []
 second_column = []
 for i in range(N):
@@ -26,7 +27,7 @@ for i in range(N):
 #plot.scatter(first_column, second_column)
 plot.show()
 
-#SECOND MATRIX
+# SECOND MATRIX
 cov2 = [[1, 0.9], [0.9, 1]]
 sdata2 = np.random.multivariate_normal(mean, cov2, N)
 
@@ -38,7 +39,7 @@ for i in range(N):
 #plot.scatter(first_column2, second_column2)
 
 
-#draw two scatter plots in a single figure
+# draw two scatter plots in a single figure
 plot.figure('Scatter Plots')
 plot.subplot(121)
 plot.scatter(first_column, second_column)
@@ -47,7 +48,7 @@ plot.scatter(first_column2, second_column2)
 
 #plot.show()
 
-#comparison between numpy result and our simple way result
+# comparison between numpy result and our simple way result
 half = int(N/2)
 print ("\nThe numpy Generated Values for: " + str(cov) + "\n")
 result = np.cov(sdata)
@@ -83,7 +84,8 @@ print ("4. non-numpy[first][last] = " + str(non_numpy2[0][-1]))
 print ("5. non-numpy[last][first] = " + str(non_numpy2[-1][0]))
 print (non_numpy2 == result2)
 
-#comparison Covariance Matrices by peak=10 of each value
+# comparison Covariance Matrices by rounding
+# around floating point peak=10 of each value
 print (COM.comparison(non_numpy,result,10))
 
 
